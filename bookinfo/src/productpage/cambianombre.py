@@ -1,6 +1,6 @@
 import os
-import etree from lxml
-ngrupo = os.environ.get("GROUP_NUMBER")
+from lxml import etree 
+ngrupo = str(os.environ.get("GROUP_NUMBER"))
 
 try:
 
