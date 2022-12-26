@@ -13,4 +13,4 @@ try:
         f.write(etree.tostring(doc, encoding='unicode', pretty_print=True))
 
 except OSError as err:
-    print("Error al leer el archivo:", err))
+    print("Error al leer el archivo:", err)
