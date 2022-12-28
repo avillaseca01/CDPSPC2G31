@@ -1,0 +1,52 @@
+version: "3"
+
+services:
+  productpage:
+    container_name: g31-product-page
+    build:
+      context: .
+      dockerfile: productpage/Dockerfile
+    volumes:
+      - ./productpage:/opt/microservices
+    ports:
+      - "9080:9080"
+    environment:
+      - SERVICE_VERSION=v1
+
+  details:
+    container_name: g31-details
+    build:
+      context: .
+      dockerfile: details/Dockerfile
+    volumes:
+      - ./details:/opt/microservices
+    ports:
+      - "9080:9080"
+    environment:
+      - SERVICE_VERSION=v1
+      - ENABLE_EXTERNAL_BOOK_SERVICE=true
+
+  reviews:
+    container_name: g31-reviews
+    build:
+      context: .
+      dockerfile: reviews/Dockerfile
+    volumes:
+      - ./reviews:/opt/microservices
+    ports:
+      - "9080:9080"
+    environment:
+      - SERVICE_VERSION=v1
+      - ENABLE_RATINGS=true
+
+  ratings:
+    container_name: g31-ratings
+    build:
+      context: .
+      dockerfile: ratings/Dockerfile
+    volumes:
+      - ./ratings:/opt/microservices
+    ports:
+      - "9080:9080"
+    environment:
+      - SERVICE_VERSION=v1
