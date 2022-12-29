@@ -1,6 +1,6 @@
 FROM node:12.18.1-slim
-COPY /ratings/package.json /opt/microservices/
-COPY /ratings/ratings.js /opt/microservices/
+COPY ./ratings/package.json /opt/microservices/
+COPY ./ratings/ratings.js /opt/microservices/
 ENV SERVICE_VERSION=v1
 WORKDIR /opt/microservices
 RUN npm install httpdispatcher@1.0.0
