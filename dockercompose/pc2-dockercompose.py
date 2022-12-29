@@ -10,5 +10,4 @@ os.system('cd ./bookinfo/src/reviews/')
 os.system('sudo docker run --rm -u root -v "$(pwd)":/home/gradle/project -w/home/gradle/project gradle:4.8.1 gradle clean build')
 #modificar ruta del Dockerfile de reviews ./reviews/reviews-wlpcfg/servers/LibertyProjectServer
 os.system('cd ..')
-os.system('cd ..')
 os.system('sudo docker-compose up -d')
