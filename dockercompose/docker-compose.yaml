@@ -5,7 +5,7 @@ services:
     container_name: g31-product-page
     build:
       context: .
-      dockerfile: productpage/Dockerfile
+      dockerfile: ./productpage/Dockerfile
     volumes:
       - ./productpage:/opt/microservices
     ports:
@@ -17,7 +17,7 @@ services:
     container_name: g31-details
     build:
       context: .
-      dockerfile: details/Dockerfile
+      dockerfile: ./details/Dockerfile
     volumes:
       - ./details:/opt/microservices
     ports:
@@ -30,11 +30,9 @@ services:
     container_name: g31-reviews
     build:
       context: .
-      dockerfile: reviews/reviews-wlpcfg/Dockerfile
+      dockerfile: ./reviews/reviews-wlpcfg/Dockerfile
     volumes:
       - ./reviews:/opt/microservices
-    ports:
-      - "9080:9080"
     environment:
       - SERVICE_VERSION=v1
       - ENABLE_RATINGS=true
@@ -43,7 +41,7 @@ services:
     container_name: g31-ratings
     build:
       context: .
-      dockerfile: ratings/Dockerfile
+      dockerfile: ./ratings/Dockerfile
     volumes:
       - ./ratings:/opt/microservices
     ports:
