@@ -1,5 +1,6 @@
 FROM node:12.18.1-slim
-COPY package.json ratings.js /opt/microservices/
+COPY /ratings/package.json /opt/microservices/
+COPY /ratings/ratings.js /opt/microservices/
 ENV SERVICE_VERSION=v1
 WORKDIR /opt/microservices
 RUN npm install
