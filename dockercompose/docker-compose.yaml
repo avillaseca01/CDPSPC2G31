@@ -30,7 +30,7 @@ services:
     container_name: g31-reviews
     build:
       context: .
-      dockerfile: reviews/Dockerfile
+      dockerfile: reviews/reviews-wlpcfg/Dockerfile
     volumes:
       - ./reviews:/opt/microservices
     ports:
