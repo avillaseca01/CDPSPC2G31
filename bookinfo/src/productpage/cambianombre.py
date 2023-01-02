@@ -1,6 +1,6 @@
 import os
 from lxml import etree 
-ngrupogetenv = os.getenv('GROUP_NUMBER')
+ngrupogetenv = os.environ.get("GROUP_NUMBER")
 try:
 
     parser = etree.HTMLParser()
