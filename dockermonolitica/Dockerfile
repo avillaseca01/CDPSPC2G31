@@ -3,4 +3,5 @@ COPY . /app
 WORKDIR /app/bookinfo/src/productpage
 RUN pip install -r requirements.txt
 EXPOSE 9080
-CMD [ "nohup", "python3","cambianombre.py", "&", "python3", "productpage_monolith.py", "9080" ]
+RUN python3 cambianombre.py
+RUN python3 productpage_monolith.py 9080
