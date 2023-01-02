@@ -11,7 +11,7 @@ services:
     ports:
       - "9080:9080"
     environment:
-      - SERVICE_VERSION=v1
+      - GROUP_NUMBER=31
 
   details:
     container_name: g31-details
