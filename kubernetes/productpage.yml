@@ -38,7 +38,9 @@ spec:
     spec:
       containers:
       - name: productpage
-        image: g31/productpage
+        build:
+          context: .
+          dockerfile: ./productpage
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
