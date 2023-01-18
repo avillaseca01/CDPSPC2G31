@@ -40,7 +40,7 @@ spec:
       - name: productpage
         build:
           context: .
-          dockerfile: ./productpage
+          dockerfile: ./productpage/Dockerfile
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
