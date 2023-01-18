@@ -9,16 +9,18 @@ metadata:
     app: productpage
     service: productpage
 spec:
+  type: LoadBalancer
   ports:
-  - port: 9080
-    name: http
+  - name: http
+    targetPort: 9080
+    port: 9080
   selector:
     app: productpage
----
+--- 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: productpage-v1
+  name: productpage
   labels:
     app: productpage
     version: v1
