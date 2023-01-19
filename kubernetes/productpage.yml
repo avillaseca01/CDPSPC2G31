@@ -38,13 +38,10 @@ spec:
     spec:
       containers:
       - name: productpage
-        image: my-image-temporal
-        build:
-          context: .
-          dockerfile: ./productpage/Dockerfile
-        imagePullPolicy: IfNotPresent
+        image: g31/product-page:latest
         ports:
         - containerPort: 9080
+        imagePullPolicy: IfNotPresent
         securityContext:
-          runAsUser: 1000
+        - runAsUser: 1000
 ---
