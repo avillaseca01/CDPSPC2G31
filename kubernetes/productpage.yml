@@ -38,10 +38,10 @@ spec:
     spec:
       containers:
       - name: productpage
-        image: g31/product-page:latest
+        image: g31/productpage:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
-        imagePullPolicy: IfNotPresent
         securityContext:
-        - runAsUser: 1000
+          runAsUser: 1000
 ---
