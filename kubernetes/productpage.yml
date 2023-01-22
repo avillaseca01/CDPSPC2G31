@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - name: productpage
-        image: g31/product-page:latest
+        image: docker.io/avillaseca01/product-page:latest
         imagePullPolicy: IfNotPresent
         env:
         - name: GROUP_NUMBER
