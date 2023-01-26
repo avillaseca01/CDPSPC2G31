@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: reviews
-        image: g31/reviews-v3
+        image: docker.io/avillaseca01/reviews-v3
         imagePullPolicy: IfNotPresent
         env:
         - name: LOG_DIR
