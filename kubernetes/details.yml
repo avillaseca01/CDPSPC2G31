@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: details
-        image: g31/details
+        image: docker.io/avillaseca01/details
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
