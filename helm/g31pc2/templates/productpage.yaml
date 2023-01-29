@@ -1,0 +1,50 @@
+##################################################################################################
+# Reviews service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: productpage
+  labels:
+    app: productpage
+    service: productpage
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    targetPort: 9080
+    port: 9080
+  selector:
+    app: productpage
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productpage
+  labels:
+    app: productpage
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productpage
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: productpage
+        version: v1
+    spec:
+      containers:
+      - name: productpage
+        image: docker.io/avillaseca01/product-page:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: GROUP_NUMBER
+          value: "g31"
+        ports:
+        - containerPort: 9080
+        securityContext:
+          runAsUser: 1000
+---
