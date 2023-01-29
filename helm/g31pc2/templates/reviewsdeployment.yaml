@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reviews-{{ .Values.reviews.version }}
+  name: reviews-{{ .Values.reviewsversion }}
   labels:
     app: reviews
-    version: {{ .Values.reviews.version }}
+    version: {{ .Values.reviewsversion }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: reviews
-      version: {{ .Values.reviews.version }}
+      version: {{ .Values.reviewsversion }}
   template:
     metadata:
       labels:
         app: reviews
-        version: {{ .Values.reviews.version }}
+        version: {{ .Values.reviewsversion }}
     spec:
       containers:
       - name: reviews
