@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: reviews
-        image: docker.io/avillaseca01/reviews-{{ .Values.reviews.version }}
+        image: docker.io/avillaseca01/reviews-{{ .Values.reviewsversion }}
         imagePullPolicy: IfNotPresent
         env:
         - name: LOG_DIR
