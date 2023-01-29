@@ -1,4 +1,5 @@
 import os
+os.system('cp ./dockermonolitica/Dockerfile .')
 os.system('sudo apt-get update')
 os.system('sudo apt-get install docker.io -y')
 os.system('sudo docker build -t g31/product-page .')
