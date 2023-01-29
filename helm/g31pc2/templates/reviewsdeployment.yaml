@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reviews-v1
+  name: reviews-{{ .Values.reviews.version }}
   labels:
     app: reviews
-    version: v1
+    version: {{ .Values.reviews.version }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: reviews
-      version: v1
+      version: {{ .Values.reviews.version }}
   template:
     metadata:
       labels:
         app: reviews
-        version: v1
+        version: {{ .Values.reviews.version }}
     spec:
       containers:
       - name: reviews
-        image: docker.io/avillaseca01/reviews-{{ .Values.versionreviews }}
+        image: docker.io/avillaseca01/reviews-{{ .Values.reviews.version }}
         imagePullPolicy: IfNotPresent
         env:
         - name: LOG_DIR
