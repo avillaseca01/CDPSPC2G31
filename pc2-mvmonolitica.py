@@ -7,7 +7,6 @@ os.environ ["GROUP_NUMBER"]="31"
 os.system('sudo apt-get install pip -y')
 os.system('sudo pip install -r ./bookinfo/src/productpage/requirements.txt')
 from lxml import etree
-arser = etree.XMLParser(recover=True)
 ngrupo = os.environ.get("GROUP_NUMBER")
 
 try:
