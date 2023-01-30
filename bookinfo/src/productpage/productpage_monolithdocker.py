@@ -33,6 +33,7 @@ import logging
 import os
 import asyncio
 from lxml import etree
+import re
 
 ngrupogetenv = os.environ.get("GROUP_NUMBER")
 try:
@@ -47,6 +48,12 @@ try:
 
 except OSError as err:
     print("Error al leer el archivo:", err)
+
+with open("./templates/productpage.html", "r") as f:
+        filedata = f.read()
+filedata = re.sub("{% block title %}Simple Bookstore App{% endblock %}", "{% block title %}Grupo "+ngrupogetenv+" {% endblock %}", filedata)
+with open("./templates/productpage.html", "w") as f:
+        f.write(filedata)    
 
 # These two lines enable debugging at httplib level (requests->urllib3->http.client)
 # You will see the REQUEST, including HEADERS and DATA, and RESPONSE with HEADERS but without DATA.
