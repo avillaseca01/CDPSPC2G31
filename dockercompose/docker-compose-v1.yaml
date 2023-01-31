@@ -35,7 +35,7 @@ services:
       - ./reviews:/opt/microservices
     environment:
       - SERVICE_VERSION=v1
-      - ENABLE_RATINGS=true
+      - ENABLE_RATINGS=false
 
   ratings:
     container_name: g31-ratings
